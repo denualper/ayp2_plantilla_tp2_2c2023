@@ -8,22 +8,36 @@ private:
     Nodo<T>* siguiente;
 public:
     // Constructor.
-    Nodo(T dato);
+    Nodo(T dato){
+        dato{} = dato;
+        siguiente = nullptr;
+    };
 
     // Pre: -
     // Post: Devuelve un puntero al nodo siguiente.
-    Nodo<T>* obtener_siguiente();
+    Nodo<T>* obtener_siguiente(){
+        return siguiente;
+    };
 
     // Pre: -
     // Post: Cambia el puntero al nodo siguiente.
-    void cambiar_siguiente(Nodo<T>* nuevo);
+    void cambiar_siguiente(Nodo<T>* nuevo){
+        siguiente = nuevo;
+    };
 
     // Pre: -
     // Post: Devuelve el dato almacenado.
-    T obtener_dato();
+    T obtener_dato(){
+        return dato{};
+    };
 
     // Destructor.
-    ~Nodo();
+    ~Nodo(){
+        delete siguiente;
+        siguiente = nullptr;
+    };
 };
+
+#endif
 
 #endif
